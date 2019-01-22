@@ -3,8 +3,10 @@
 
 const express = require("express");
 const mongoose = require('mongoose');
-require('./services/passport');
 const keys = require("./config/keys"); // Don't have to write keys.js
+
+require('./models/User.js');
+require('./services/passport');
 
 //Connect to MongoDB
 mongoose.connect(keys.mongoURI);
