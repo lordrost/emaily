@@ -12,6 +12,12 @@ app.get(
 
 app.get("/auth/google/callback", passport.authenticate('google'));
 
+// Logout Function takes and kill cookie. Required Passport Library
+app.get("/api/logout", (req, res) => {
+  req.logout();
+  res.send(req.user);
+});
+
 app.get("/api/current_user", (req, res) => {
   res.send(req.user);
 });
