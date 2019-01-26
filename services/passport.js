@@ -20,7 +20,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "/auth/google/callback"
+      callbackURL: "/auth/google/callback",
+      proxy: true // Trust Proxy and use https
     },
     // done - Whenever we calling that, it tells Passport.js that we're done with OAuth
     (accessToken, refreshToken, profile, done) => {
